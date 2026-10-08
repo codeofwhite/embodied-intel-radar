@@ -1,0 +1,12 @@
+[Unit]
+Description=Refresh embodied intelligence radar every six hours
+
+[Timer]
+OnCalendar=*-*-* 00,06,12,18:00:00 UTC
+RandomizedDelaySec=5min
+AccuracySec=1min
+Persistent=true
+Unit=embodied-radar.service
+
+[Install]
+WantedBy=timers.target

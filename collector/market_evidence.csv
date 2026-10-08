@@ -1,0 +1,6 @@
+period,market,job_growth_pct,candidate_growth_pct,metric,source_url,note
+2025-01_to_2025-05,机器人产业,6,32,同比增速,https://www.fxbaogao.com/detail/4915720,职位与求职人数均增长但求职增速更快
+2025-01_to_2025-05,人形机器人,409,396,同比增速,https://www.fxbaogao.com/detail/4915720,低基数高速增长且供需同时扩张
+2025-Q4,人工智能,19,,招聘职位同比,https://finance.people.com.cn/n1/2026/0126/c1004-40653013.html,行业级需求信号
+2025-Q4,机器人,37.3,,招聘职位同比,https://finance.people.com.cn/n1/2026/0126/c1004-40653013.html,行业级需求信号
+2025-Q4,算法工程师,110.1,,招聘职位同比,https://finance.people.com.cn/n1/2026/0126/c1004-40653013.html,跨行业岗位信号

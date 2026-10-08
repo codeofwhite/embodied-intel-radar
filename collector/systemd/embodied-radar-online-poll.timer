@@ -1,0 +1,12 @@
+[Unit]
+Description=Check embodied radar online refresh queue every two minutes
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=2min
+RandomizedDelaySec=15s
+Persistent=true
+Unit=embodied-radar-online-poll.service
+
+[Install]
+WantedBy=timers.target

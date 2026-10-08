@@ -1,0 +1,5 @@
+{
+  "site_url": "https://radar.example.com",
+  "ingest_secret": "REPLACE_WITH_A_RANDOM_SECRET",
+  "sites_authorization": "REPLACE_WITH_YOUR_PRIVATE_SITE_TOKEN"
+}

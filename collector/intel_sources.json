@@ -1,0 +1,131 @@
+{
+  "company_registry": "company_registry.json",
+  "request": {
+    "timeout_seconds": 15,
+    "delay_seconds": 1.2,
+    "max_results_per_query": 12,
+    "respect_robots_txt": true,
+    "user_agent": "EmbodiedIntelRadar/0.2 (personal industry research; low-rate public pages)"
+  },
+  "events": {
+    "queries": [
+      "具身智能 人形机器人 产品发布 官方",
+      "具身智能 机器人 融资 发布 官方",
+      "机器人 VLA 仿真 数据集 发布",
+      "site:arxiv.org embodied intelligence robot learning",
+      "site:github.com humanoid robot release"
+    ],
+    "allowed_domains": [
+      "dji.com",
+      "ubtrobot.com",
+      "dobot.cn",
+      "limxdynamics.com",
+      "unitree.com",
+      "agibot.com",
+      "fourierintelligence.com",
+      "pudurobotics.com",
+      "deeproute.ai",
+      "robosense.ai",
+      "arxiv.org",
+      "github.com"
+    ],
+    "max_items": 40,
+    "verify_target_pages": true,
+    "structured_sources": {
+      "github_releases": [
+        {"repo": "NVIDIA/Isaac-GR00T", "company": "NVIDIA", "limit": 4},
+        {"repo": "huggingface/lerobot", "company": "Hugging Face", "limit": 4},
+        {"repo": "Physical-Intelligence/openpi", "company": "Physical Intelligence", "limit": 4},
+        {"repo": "unitreerobotics/unitree_ros2", "company": "宇树科技", "limit": 4}
+      ],
+      "arxiv": [
+        {"query": "all:\"embodied intelligence\" OR all:\"robot learning\"", "limit": 10}
+      ]
+    }
+  },
+  "social": {
+    "queries": [
+      "site:x.com 具身智能 招聘 OR 内推",
+      "site:x.com humanoid robotics hiring VLA",
+      "site:twitter.com robot learning hiring interview",
+      "site:x.com embodied AI robotics VLA release",
+      "site:x.com humanoid robot learning paper demo",
+      "site:x.com robot simulation dataset open source",
+      "site:xiaohongshu.com 具身智能 招聘",
+      "site:xiaohongshu.com 人形机器人 求职",
+      "site:xiaohongshu.com 机器人 算法 面试",
+      "site:xiaohongshu.com 深圳 机器人 公司",
+      "site:xiaohongshu.com 具身智能 内推 薪资"
+    ],
+    "allowed_domains": [
+      "x.com",
+      "twitter.com",
+      "xiaohongshu.com",
+      "xhslink.com"
+    ],
+    "max_items": 40,
+    "verify_target_pages": false,
+    "watched_accounts": [
+      "Figure_robot",
+      "1x_tech",
+      "unitreerobotics",
+      "NVIDIARobotics",
+      "huggingface"
+    ],
+    "account_query_terms": "robotics OR humanoid OR VLA OR robot learning",
+    "high_value_types": [
+      "招人/内推",
+      "面试经验",
+      "岗位能力画像",
+      "薪酬与工作强度",
+      "团队方向变化"
+    ],
+    "relevance": {
+      "employment_keywords": [
+        "招聘", "招人", "内推", "求职", "岗位", "职位", "校招", "实习",
+        "面试", "面经", "offer", "薪资", "薪酬", "加班", "工作强度",
+        "hiring", "referral", "opening", "interview", "headcount"
+      ],
+      "embodied_keywords": [
+        "具身智能", "人形机器人", "机器人", "robotics", "humanoid", "robot learning",
+        "vla", "模仿学习", "强化学习", "仿真", "sim2real", "real2sim", "灵巧操作",
+        "运动控制", "机器人数据", "数据闭环", "3d视觉", "点云"
+      ],
+      "trend_keywords": [
+        "发布", "开源", "论文", "数据集", "基准", "演示", "融资", "量产",
+        "release", "open source", "paper", "dataset", "benchmark", "demo", "funding"
+      ]
+    },
+    "topics": [
+      {"label": "招聘与团队", "keywords": ["招聘", "招人", "内推", "hiring", "referral", "headcount", "扩招"]},
+      {"label": "VLA与策略学习", "keywords": ["vla", "robot learning", "模仿学习", "强化学习", "policy", "post-training"]},
+      {"label": "仿真与机器人数据", "keywords": ["仿真", "simulation", "sim2real", "real2sim", "机器人数据", "dataset", "合成数据"]},
+      {"label": "人形与运动控制", "keywords": ["人形", "humanoid", "运动控制", "locomotion", "whole-body", "全身控制"]},
+      {"label": "灵巧操作", "keywords": ["灵巧", "dexterous", "manipulation", "抓取", "grasp"]},
+      {"label": "开源、论文与产品", "keywords": ["开源", "open source", "release", "发布", "论文", "paper", "benchmark", "demo"]}
+    ],
+    "notifications": {
+      "timezone": "Asia/Shanghai",
+      "digest_hour": 20,
+      "min_digest_score": 60,
+      "urgent_score": 85,
+      "urgent_min_support": 2,
+      "max_items": 5,
+      "max_predictions": 3
+    },
+    "search_shortcuts": [
+      {"platform": "X", "label": "深圳具身招聘", "query": "具身智能 招聘 深圳"},
+      {"platform": "X", "label": "VLA / Robot Learning 招聘", "query": "VLA robot learning hiring"},
+      {"platform": "X", "label": "机器人面试与内推", "query": "机器人 面试 内推"},
+      {"platform": "小红书", "label": "具身智能招聘", "query": "具身智能招聘"},
+      {"platform": "小红书", "label": "机器人算法面试", "query": "机器人算法面试"},
+      {"platform": "小红书", "label": "深圳机器人求职", "query": "深圳机器人求职"},
+      {"platform": "小红书", "label": "VLA 求职", "query": "VLA求职"}
+    ],
+    "x_api": {
+      "enabled": false,
+      "notice": "默认不调用 X 付费 API；仅使用公开搜索索引与用户手动保存的链接。"
+    },
+    "notice": "X 与小红书只保存公开搜索索引中的标题、摘要和原链接；不请求登录后正文，不绕过验证码或反爬。"
+  }
+}

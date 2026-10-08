@@ -1,0 +1,17 @@
+{
+  "synthetic": true,
+  "notice": "人工构造的字段示例，不是真实招聘，也不是前端导入快照。",
+  "company": "示例机器人公司",
+  "title": "机器人数据工程师（演示）",
+  "location": "深圳",
+  "url": "https://example.com/careers/demo",
+  "sourceTier": "演示数据",
+  "responsibilities": [
+    "维护机器人数据与质量检查流程"
+  ],
+  "requirements": [
+    "Python",
+    "SQL"
+  ],
+  "verification": "演示数据，无招聘结论"
+}

@@ -1,0 +1,11 @@
+__pycache__/
+data/jobs.sqlite
+data/jobs.json
+data/career_links.json
+data/raw/
+data/feishu_notify_state.json
+secrets/
+data/events.json
+data/social.json
+data/refresh_status.json
+data/quotes.json

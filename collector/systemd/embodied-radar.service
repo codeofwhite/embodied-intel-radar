@@ -1,0 +1,15 @@
+[Unit]
+Description=Refresh embodied intelligence employment and industry radar
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h/embodied-intel-radar-public
+ExecStart=/usr/bin/python3 %h/embodied-intel-radar-public/collector/radar_refresh.py
+Nice=10
+TimeoutStartSec=45min
+KillMode=control-group
+
+[Install]
+WantedBy=default.target
