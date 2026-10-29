@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="860" viewBox="0 0 1440 860">
+<title>Embodied Compass — source-linked opportunities, companies and research</title>
+<desc>Interface concept illustration, not a screenshot. An IPPLab project. 示例界面为功能示意，不代表实时招聘。</desc>
+<defs><pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="#102b32" stroke-opacity=".055"/></pattern></defs>
+<rect width="1440" height="860" rx="20" fill="#eef3ed"/>
+<g font-family="Inter,Segoe UI,PingFang SC,Microsoft YaHei,sans-serif" fill="#102b32">
+<text x="64" y="67" font-size="23" font-weight="700">Embodied <tspan font-weight="400">Compass</tspan></text>
+<text x="64" y="94" font-size="12" letter-spacing="4" fill="#607971">具 身 罗 盘</text>
+<text x="1376" y="66" text-anchor="end" font-size="12" letter-spacing="2" fill="#617b70">AN IPPLab PROJECT</text>
+<path d="M64 119H1376" stroke="#cedbd0"/>
+<text x="64" y="172" font-size="12" font-weight="700" letter-spacing="3" fill="#527965">A FIELD GUIDE TO EMBODIED AI</text>
+<text x="60" y="247" font-size="62" font-weight="650" letter-spacing="-2">Find your direction</text>
+<text x="60" y="320" font-size="62" font-weight="650" letter-spacing="-2">in embodied AI.</text>
+<text x="64" y="367" font-size="19" fill="#5b7470">从岗位、公司与研究动态中，找到下一步。</text>
+<rect x="64" y="399" width="141" height="35" rx="5" fill="#102b32"/><text x="134" y="422" text-anchor="middle" font-size="12" fill="#fff">PUBLIC SOURCES ↗</text>
+<text x="224" y="422" font-size="12" fill="#547061">OPEN SOURCE · SOURCE LINKED</text>
+<rect x="874" y="153" width="502" height="298" rx="12" fill="#d4efdc"/><rect x="874" y="153" width="502" height="298" rx="12" fill="url(#grid)"/>
+<circle cx="1125" cy="300" r="117" fill="none" stroke="#87b299"/><circle cx="1125" cy="300" r="80" fill="none" stroke="#87b299" stroke-opacity=".5"/>
+<path d="M962 300H1288M1125 172V429" stroke="#87b299" stroke-opacity=".6"/><text x="1125" y="178" text-anchor="middle" font-size="10" fill="#5c816b">N</text>
+<g transform="rotate(35 1125 300)"><path d="M1125 204 1160 342 1125 306 1090 342Z" fill="#245442"/><path d="M1125 204V306L1090 342Z" fill="#8bb997"/></g><circle cx="1125" cy="300" r="7" fill="#fff"/>
+<rect x="908" y="220" width="140" height="44" rx="4" fill="#f8faf5"/><text x="922" y="239" font-size="9" letter-spacing="1">01 / OPPORTUNITIES</text><text x="922" y="253" font-size="9" fill="#547061">岗位 · 技能 · 方向</text>
+<rect x="1190" y="323" width="156" height="44" rx="4" fill="#f8faf5"/><text x="1204" y="342" font-size="9" letter-spacing="1">02 / RESEARCH</text><text x="1204" y="356" font-size="9" fill="#547061">模型 · 数据 · 仿真</text>
+<text x="64" y="498" font-size="11" letter-spacing="2" fill="#6c8176">EXPLORE THE SIGNALS</text>
+<rect x="64" y="521" width="1312" height="256" rx="10" fill="#f9fbf7" stroke="#d2dfd3"/>
+<text x="88" y="555" font-size="13" font-weight="700">岗位机会</text><text x="202" y="555" font-size="13" fill="#647a70">公司地图</text><text x="317" y="555" font-size="13" fill="#647a70">研究动态</text><text x="431" y="555" font-size="13" fill="#647a70">社媒线索</text>
+<text x="1352" y="554" font-size="10" text-anchor="end" fill="#6e8275">INTERFACE CONCEPT / 功能示意</text>
+<path d="M88 570H1352" stroke="#dde5db"/>
+<rect x="88" y="590" width="406" height="162" rx="7" fill="#fff" stroke="#dce5da"/><text x="108" y="616" font-size="9" letter-spacing="1.5" fill="#65806c">OPPORTUNITIES</text><text x="108" y="650" font-size="20" font-weight="600">从岗位找到技能方向</text><text x="108" y="681" font-size="12" fill="#5d7669">城市 / 类型 / 技能筛选</text><path d="M108 698h366" stroke="#edf1e9"/><text x="108" y="726" font-size="11" fill="#637a6b">保留原文链接与采集日期</text><rect x="517" y="590" width="406" height="162" rx="7" fill="#fff" stroke="#dce5da"/><text x="537" y="616" font-size="9" letter-spacing="1.5" fill="#65806c">ECOSYSTEM</text><text x="537" y="650" font-size="20" font-weight="600">从公司找到公开入口</text><text x="537" y="681" font-size="12" fill="#5d7669">整机 / 模型 / 部件 / 平台</text><path d="M537 698h366" stroke="#edf1e9"/><text x="537" y="726" font-size="11" fill="#637a6b">公司目录不等于正在招聘</text><rect x="946" y="590" width="406" height="162" rx="7" fill="#fff" stroke="#dce5da"/><text x="966" y="616" font-size="9" letter-spacing="1.5" fill="#65806c">RESEARCH</text><text x="966" y="650" font-size="20" font-weight="600">从更新找到值得读的原文</text><text x="966" y="681" font-size="12" fill="#5d7669">开源发布 / 研究与行业线索</text><path d="M966 698h366" stroke="#edf1e9"/><text x="966" y="726" font-size="11" fill="#637a6b">版本发布不等于效果已验证</text><text x="64" y="816" font-size="11" fill="#60786a">Public-page samples. Verify before you act. / 公开网页样本，行动前核实原文。</text><text x="1376" y="817" text-anchor="end" font-size="23" font-weight="700" fill="#416b52">IPPLab</text></g></svg>

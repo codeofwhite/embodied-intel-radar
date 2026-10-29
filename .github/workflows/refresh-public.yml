@@ -1,0 +1,48 @@
+name: Refresh public signals
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: compass-refresh
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Check existing runner dependencies
+        run: python3 -c 'import requests; print("requests", requests.__version__)'
+      - name: Test public export boundary
+        run: python3 -m unittest discover -s collector/tests -p test_public_export.py -v
+      - name: Collect public jobs
+        run: |
+          timeout 1200s python3 collector/jobscan.py collect
+          python3 collector/jobscan.py export-site
+      - name: Collect research and social leads
+        shell: bash
+        run: |
+          if ! timeout 300s python3 collector/intel_scan.py events; then
+            echo '::warning::Event collection failed; retaining the previous published event section and its timestamp.'
+          fi
+          if ! timeout 300s python3 collector/intel_scan.py social; then
+            echo '::warning::Social collection failed; retaining the previous published social section and its timestamp.'
+          fi
+      - name: Export allowlisted public snapshot
+        run: python3 scripts/export-public-snapshot.py
+      - name: Commit only the public snapshot
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- site/data/snapshot.json
+          if git diff --cached --quiet; then
+            echo 'Public snapshot unchanged.'
+          else
+            git commit -m 'Refresh public Compass snapshot'
+            git push origin HEAD:main
+          fi

@@ -1,0 +1,50 @@
+name: Publish Compass
+on:
+  push:
+    branches: [main]
+    paths: ['site/**', '.github/workflows/pages.yml']
+  workflow_dispatch:
+  workflow_run:
+    workflows: ['Refresh public signals']
+    types: [completed]
+    branches: [main]
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: compass-pages
+  cancel-in-progress: false
+jobs:
+  deploy:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+      - name: Validate static bundle
+        run: |
+          node --check site/app.js
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          root = Path('site')
+          for name in ['index.html', 'styles.css', 'app.js', 'assets/brand.svg']:
+              assert (root / name).is_file(), name
+          data = json.loads((root / 'data/snapshot.json').read_text())
+          assert data['schemaVersion'] == 1 and data['jobs']
+          assert all(isinstance(data[k], list) for k in ['jobs', 'companies', 'events', 'social'])
+          PY
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

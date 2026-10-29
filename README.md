@@ -1,51 +1,136 @@
-# 具身智能行业与求职情报雷达
+<div align="center">
 
-面向具身智能求职者的公开信息采集与分析工具：从公开招聘页面提取岗位、来源和能力要求，以可解释规则整理公司、研究事件与求职线索。
+<img src="site/assets/brand.svg" width="76" height="76" alt="Embodied Compass logo">
 
-## 功能
+# Embodied Compass
 
-- 招聘采集：保留原始链接、来源等级、采集时间和解析限制。
-- 岗位分析：职责、能力分组、入门门槛依据，以及基于岗位文本生成的模拟面试问题。
-- 行业观察：公司目录、公开事件和社媒搜索入口；社媒线索始终待核实。
-- 私有部署功能：个人链接收件箱、刷新队列、上传和可选飞书通知。
+### Find your direction in embodied AI.
 
-公开版默认深圳示例，技能列表为 Python / Linux / SQL，不代表作者履历；公司名称优先加分默认关闭。其余排序规则是示例启发式，不是录用概率。
+Source-linked **jobs, companies and research signals** — in one explorable map.
 
-## 开始使用
+[Public website](https://codeofwhite.github.io/embodied-intel-radar/) · [中文介绍](README.zh-CN.md) · [How it works](docs/methodology.md) · [Contribute a source](https://github.com/codeofwhite/embodied-intel-radar/issues)
 
-Python 3 + requests；前端要求 Node >=22.13.0，依赖版本见 package-lock.json。
+[![Publish Compass](https://github.com/codeofwhite/embodied-intel-radar/actions/workflows/pages.yml/badge.svg)](https://github.com/codeofwhite/embodied-intel-radar/actions/workflows/pages.yml)
+[![Daily refresh](https://github.com/codeofwhite/embodied-intel-radar/actions/workflows/refresh-public.yml/badge.svg)](https://github.com/codeofwhite/embodied-intel-radar/actions/workflows/refresh-public.yml)
+![No model API required](https://img.shields.io/badge/model_API-not_required-d4efdc?labelColor=102b32)
+
+<img src="docs/images/overview.svg" width="100%" alt="Embodied Compass: opportunities, companies and research, with traceable sources. Interface concept illustration; not a screenshot.">
+
+<sub>Interface concept illustration, not a live screenshot. An <strong>IPPLab</strong> project.</sub>
+
+</div>
+
+## A clearer view of a fast-moving field
+
+Finding a path into embodied AI often means jumping between career pages, company
+websites, release notes and social platforms. Embodied Compass brings those public
+signals together, while keeping the original source and collection date visible.
+
+Start with a role. Explore its skills. Follow the company. Read the release.
+Then return to the original source before you act.
+
+## Explore the compass
+
+| Explore | What you can do | What the data means |
+| --- | --- | --- |
+| **Opportunities** | Search by role, company or skill; filter by city, specialty, role type and official source | Parsed public listings, not guaranteed openings |
+| **Companies** | Browse the ecosystem and open company or career pages | A source directory, not proof of current hiring |
+| **Research** | Follow source-linked open-source releases and research or industry leads | A release is not independent performance validation |
+| **Social signals** | Read separately labelled search-index leads when available | Unverified leads; excluded from job counts |
+
+The public interface supports **Chinese and English**. Source text stays in its
+original language. No sign-in is needed. Personal match scores and private saved
+links are excluded. The current collector focuses on China, with Shenzhen-first
+career sources and some adjacent AI roles; this is not a global market census.
+
+## Open locally in one command
+
+Python 3 is enough to serve the included public snapshot. No frontend build or
+package installation is needed for the public website.
+
+```bash
+git clone https://github.com/codeofwhite/embodied-intel-radar.git
+cd embodied-intel-radar
+python3 -m http.server 8080 --directory site --bind 127.0.0.1
+```
+
+Open **<http://127.0.0.1:8080>**. This reads the committed snapshot; it does not
+start a collector or connect to the author's private database.
+
+## Public data → public snapshot → public website
+
+```text
+Public career pages / company sources / release and research indexes
+                              ↓
+              Existing Python collectors (robots-aware, rate-limited)
+                              ↓
+                Field-allowlisted public JSON export
+                              ↓
+              GitHub Pages · search, filter, follow the source
+```
+
+GitHub Actions attempts a refresh every day at **08:00 China time (00:00 UTC)**.
+The page shows actual collection dates; schedules can be delayed or disabled by
+GitHub. Failed required collection or invalid exports leave the last published
+snapshot intact. Optional sections retain their own timestamps if collection
+fails. No paid model API is required.
+
+For your own deployment, choose **GitHub Actions** in **Settings → Pages**, then
+run **Publish Compass**. The first deployment requires this repository setting.
+See the [deployment guide](docs/deployment.md) for permissions, failure behavior,
+and refresh commands. The workflow checks for the hosted runner's existing
+`requests` dependency and fails explicitly if it is unavailable.
+
+## Keep the evidence attached
+
+- **A page that loads is not necessarily an open job.** Check deadlines and the
+  employer's original listing. Missing dates, old posts and extraction conflicts
+  remain visible.
+- **Counts describe collected samples.** Search coverage and parsers are limited.
+  Social leads and company directory entries are not counted as jobs.
+- **Source tiers describe provenance.** They do not certify accuracy. Automated
+  extraction and heuristic analysis can be wrong.
+- **A snapshot is not a trend.** The public refresh workflow does not accumulate a
+  multi-day database or claim hiring growth, recruiting probability or investment value.
+- **Public means public sources.** No login, CAPTCHA or access-control bypassing.
+  Links and short extracted descriptions remain attributed to their sources.
+
+[Methodology](docs/methodology.md) · [Reading guide](docs/industry-guide.md) · [Collector details](collector/README.md)
+
+## For developers
+
+The standalone public UI lives in `site/`. The retained React/Worker/D1 application
+in `app/` is a separate **private deployment** with inbox and refresh features. Its
+routes do not provide multi-user isolation; do not expose the full private service
+anonymously. The public website never calls those APIs.
+
+With the existing Python 3 + `requests` development environment:
 
 ```bash
 python3 -m unittest discover -s collector/tests -v
-python3 collector/jobscan.py collect --dry-run
+node --check site/app.js
 ```
 
-需要实际采集时，阅读 [采集器说明](collector/README.md)。该流程写入本地数据库并访问公开网站。前端新环境需自行安装依赖：
+To refresh locally, follow the exact [public collection commands](docs/deployment.md#local-checks--本地检查).
+Collection writes local data and makes external requests. `radar_refresh.py` also
+includes optional notification/private publishing steps, so the public workflow
+calls only the specific collectors it needs.
 
-```bash
-npm ci
-cp .openai/hosting.example.json .openai/hosting.json
-npm run lint
-npm run build
-npm run dev
-```
+## Help improve the map
 
-hosting.json 的 project_id 必须替换为自己的部署标识；模板不连接作者站点。本地开发使用演示身份，不能当作生产认证。完整界面读取 Worker + D1 API，需要在自己的环境配置 DB 绑定并应用 drizzle/ 中现有迁移。不要为启动项目重新生成迁移。
+Good contributions are concrete: a public company career URL, a broken source,
+a reproducible parser bug, better source labels, or an accessibility improvement.
 
-**源码公开不等于服务适合匿名公开。** 收件箱读取、写入、删除及刷新接口没有独立的用户隔离，依赖私有站点入口的访问控制。请保持完整服务私有；匿名网站需先设计认证、授权和数据隔离。公开代码不包含作者的部署、数据库或个人链接。
+[Open an issue](https://github.com/codeofwhite/embodied-intel-radar/issues) with the
+original URL, what you expected, and what you observed. Please omit resumes,
+private messages, contact details and access credentials.
 
-## 示例与分析方法
+## Credits and licensing
 
-- [岗位字段示例](examples/demo-job.json)：人工构造，不是真实招聘，也非完整 UI 演示快照。
-- [配置模板](examples/config/)：真实凭证存入被忽略的 collector/secrets/，不要提交。
-- [统计与证据边界](docs/methodology.md)
-- [行业与求职阅读指南](docs/industry-guide.md)
-- [第三方声明](docs/third-party-notices.md)
+Created as an **IPPLab** project. Project branding is independent of the lab name;
+IPPLab attribution appears on the website and project illustration.
 
-## 数据边界
-
-只访问公开页面，不绕过登录、验证码或反爬。岗位数量是可解析样本，不代表全市场；至少两个不同日期的快照才能分析变化。模拟面试问题不是公司真实题目。仓库中的来源目录与 market_evidence.csv 是历史材料，未经本次联网复核，不应作为当前岗位开放或行业增长的依据。
-
-## 发布状态
-
-这是从私有项目整理的公开版，不携带私有项目的 Git 历史。Python 60 项测试、前端 lint 和生产构建均通过。许可证尚待确认，已有第三方许可声明保留。验证结果见 docs/verification.md。
+Third-party code retains its notices: [third-party notices](docs/third-party-notices.md).
+A repository-wide license has not yet been selected. Public visibility does not
+by itself grant unrestricted redistribution rights. Third-party source content
+remains subject to its original terms.
