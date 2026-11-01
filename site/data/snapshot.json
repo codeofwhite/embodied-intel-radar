@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-31T03:42:38.590859+00:00",
+  "generatedAt": "2026-11-01T03:50:39.224742+00:00",
   "jobs": [
     {
       "category": "数据工程/数据闭环",
@@ -11,7 +11,7 @@
       "entryBarrier": "低",
       "experience": "应届",
       "id": "999eee6ae26ab5518e8202d6",
-      "lastSeen": "2026-10-31",
+      "lastSeen": "2026-11-01",
       "listingStatus": "页面本次可访问",
       "location": "深圳",
       "sourceTier": "招聘平台",
@@ -49,7 +49,7 @@
       "entryBarrier": "不可判断",
       "experience": "未注明",
       "id": "8ea181953e486ed5e806f8bc",
-      "lastSeen": "2026-10-31",
+      "lastSeen": "2026-11-01",
       "listingStatus": "页面本次可访问",
       "location": "深圳",
       "sourceTier": "招聘平台",
@@ -77,25 +77,78 @@
       ]
     },
     {
-      "category": "通用算法/多模态/CV",
+      "category": "机器人控制/VLA",
+      "company": "Qualcomm高通",
+      "datePosted": "2026-03-04",
+      "education": "本科",
+      "employmentType": "实习",
+      "entryBarrier": "不可判断",
+      "experience": "未注明",
+      "id": "65148a9521825390c6dba46e",
+      "lastSeen": "2026-11-01",
+      "listingStatus": "可能过期",
+      "location": "深圳 / 成都",
+      "sourceTier": "招聘平台",
+      "title": "[实习]机器人软件开发工程师",
+      "verification": "本次成功获取并解析",
+      "workSummary": "Qualcomm高通校招 [实习]机器人软件开发工程师 2026最新招聘求职信息，薪资：0-9999999，地点：深圳,成都，点击查看更多Qualcomm高通招聘岗位、岗位职责要求、工作内容、薪资待遇介绍等企业招聘信息",
+      "url": "https://www.nowcoder.com/jobs/detail/436340",
+      "skills": [
+        "Python",
+        "C++",
+        "ROS2",
+        "SLAM"
+      ],
+      "qualityFlags": [
+        "发布日期较旧",
+        "非公司官方来源"
+      ],
+      "responsibilities": [
+        "Qualcomm高通校招 [实习]机器人软件开发工程师 2026最新招聘求职信息，薪资：0-9999999，地点：深圳,成都，点击查看更多Qualcomm高通招聘岗位、岗位职责要求、工作内容、薪资待遇介绍等企业招聘信息"
+      ],
+      "requirements": [
+        "Qualcomm高通校招 [实习]机器人软件开发工程师 2026最新招聘求职信息，薪资：0-9999999，地点：深圳,成都，点击查看更多Qualcomm高通招聘岗位、岗位职责要求、工作内容、薪资待遇介绍等企业招聘信息"
+      ],
+      "entryBasis": [
+        "岗位类型为实习",
+        "学历与经验要求未完整披露"
+      ]
+    },
+    {
+      "category": "AI Agent/大模型应用",
       "company": "元戎启行",
-      "datePosted": "",
-      "education": "未注明",
+      "datePosted": "2025-12-14",
+      "education": "博士",
       "employmentType": "实习",
       "entryBarrier": "不可判断",
       "experience": "未注明",
       "id": "f445aa70ef9751a28bb2e601",
-      "lastSeen": "2026-10-31",
-      "listingStatus": "页面本次可访问",
+      "lastSeen": "2026-11-01",
+      "listingStatus": "可能过期",
       "location": "深圳",
       "sourceTier": "招聘平台",
       "title": "【2027秋招】算法工程师（实习）",
       "verification": "本次成功获取并解析",
       "workSummary": "元戎启行实习 【2027秋招】算法工程师（实习） 2026最新招聘求职信息，薪资：200-500，地点：深圳，点击查看更多元戎启行招聘岗位、岗位职责要求、工作内容、薪资待遇介绍等企业招聘信息",
       "url": "https://www.nowcoder.com/jobs/detail/452971",
-      "skills": [],
+      "skills": [
+        "Python",
+        "C++",
+        "PyTorch",
+        "TensorFlow",
+        "CUDA",
+        "Linux",
+        "SLAM",
+        "3DGS",
+        "VLA",
+        "强化学习",
+        "多模态",
+        "RAG",
+        "LangChain",
+        "模型评测"
+      ],
       "qualityFlags": [
-        "发布日期缺失",
+        "发布日期较旧",
         "非公司官方来源"
       ],
       "responsibilities": [
@@ -112,90 +165,13 @@
     {
       "category": "AI Agent/大模型应用",
       "company": "公司未解析",
-      "datePosted": "2026-07-17",
-      "education": "本科",
-      "employmentType": "实习",
-      "entryBarrier": "低",
-      "experience": "应届",
-      "id": "9b5b651e0fbe93b2f69ba53a",
-      "lastSeen": "2026-10-31",
-      "listingStatus": "页面本次可访问",
-      "location": "上海",
-      "sourceTier": "高校转发",
-      "title": "AI Agent研发工程师 北京体育大学学生就业创业指导中心",
-      "verification": "本次成功获取并解析",
-      "workSummary": "Agent核心架构开发：负责Agent核心模块（任务规划、上下文管理、长期/短期记忆、工具调用）的设计与开发，构建高可靠、低延迟的智能体底层框架",
-      "url": "https://jy.bsu.edu.cn/front/zwxx.jspa?xqzwId=2078018788040658946&zpxxId=2078020991216275457",
-      "skills": [
-        "Python",
-        "C++",
-        "RAG",
-        "LangChain",
-        "Go"
-      ],
-      "qualityFlags": [
-        "非公司官方来源"
-      ],
-      "responsibilities": [
-        "Agent核心架构开发：负责Agent核心模块（任务规划、上下文管理、长期/短期记忆、工具调用）的设计与开发，构建高可靠、低延迟的智能体底层框架",
-        "应用效果调优：主导RAG知识库建设与交互环境构建，精通Prompt工程与工作流编排，持续优化大模型在复杂业务场景下的生成效果、稳定性与可控性",
-        "高性能工程链路建设：参与高并发、高可用分布式系统设计，优化Agent及RAG链路的系统性能，设计与落地缓存机制、消息队列、异步调度等核心组件，保障系统在海量请求下的稳定性",
-        "具备扎实的Prompt编写与调优能力，有结合多智能体、MCP、Function Calling等进行实际项目开发的经验",
-        "框架与原理：深入理解 LLM/Agent/RAG 核心原理，熟悉 LangChain、LlamaIndex、AutoGen、Dify 等主流大模型应用开发框架"
-      ],
-      "requirements": [
-        "2027届应届毕业生，本科及以上学历，计算机、软件、人工智能、数学等相关专业优先",
-        "编程底子厚：熟练使用 Python/Java/Go/C++ 中至少一门语言，编程基础扎实，熟悉常用数据结构与算法，具备优秀的代码编写与工程实践能力",
-        "AI工程能力：具备“AI原生”思维，熟练使用 Cursor、Claude Code 等AI编程工具提效",
-        "具备扎实的Prompt编写与调优能力，有结合多智能体、MCP、Function Calling等进行实际项目开发的经验",
-        "框架与原理：深入理解 LLM/Agent/RAG 核心原理，熟悉 LangChain、LlamaIndex、AutoGen、Dify 等主流大模型应用开发框架"
-      ],
-      "entryBasis": [
-        "实习",
-        "校招",
-        "应届",
-        "本科可投"
-      ]
-    },
-    {
-      "category": "通用算法/多模态/CV",
-      "company": "公司未解析",
-      "datePosted": "2026-11-17",
-      "education": "博士",
-      "employmentType": "校招",
-      "entryBarrier": "中",
-      "experience": "未注明",
-      "id": "7a2108c4d1118e420aef1683",
-      "lastSeen": "2026-10-31",
-      "listingStatus": "页面本次可访问",
-      "location": "深圳 / 武汉",
-      "sourceTier": "高校转发",
-      "title": "启云方2027届校园招聘正式启动！",
-      "verification": "本次成功获取并解析",
-      "workSummary": "当前只解析到岗位标题，请打开原始招聘页查看完整职责。",
-      "url": "https://myjob.dlmu.edu.cn/campus/view/id/868418",
-      "skills": [],
-      "qualityFlags": [
-        "发布日期异常",
-        "非公司官方来源"
-      ],
-      "responsibilities": [],
-      "requirements": [],
-      "entryBasis": [
-        "岗位类型为校招",
-        "页面提到博士，是否为硬性要求需核实"
-      ]
-    },
-    {
-      "category": "AI Agent/大模型应用",
-      "company": "公司未解析",
       "datePosted": "2026-09-03",
       "education": "博士",
       "employmentType": "校招",
       "entryBarrier": "不可判断",
       "experience": "未注明",
       "id": "b02e84bd23dcaaf76e226c27",
-      "lastSeen": "2026-10-31",
+      "lastSeen": "2026-11-01",
       "listingStatus": "页面本次可访问",
       "location": "深圳",
       "sourceTier": "高校转发",
@@ -225,7 +201,7 @@
       "entryBarrier": "不可判断",
       "experience": "未注明",
       "id": "292563a250bfacf9eb8173cf",
-      "lastSeen": "2026-10-31",
+      "lastSeen": "2026-11-01",
       "listingStatus": "官网本次可见",
       "location": "未注明",
       "sourceTier": "公司官方",
@@ -258,7 +234,7 @@
       "entryBarrier": "不可判断",
       "experience": "未注明",
       "id": "23faea1428df4936b471c026",
-      "lastSeen": "2026-10-31",
+      "lastSeen": "2026-11-01",
       "listingStatus": "页面本次可访问",
       "location": "未注明",
       "sourceTier": "高校转发",
@@ -301,7 +277,7 @@
       "entryBarrier": "不可判断",
       "experience": "未注明",
       "id": "715d70c79848b1aececcba53",
-      "lastSeen": "2026-10-31",
+      "lastSeen": "2026-11-01",
       "listingStatus": "可能过期",
       "location": "深圳 / 武汉",
       "sourceTier": "招聘平台",
@@ -348,7 +324,7 @@
       "entryBarrier": "不可判断",
       "experience": "未注明",
       "id": "9561e37d81689ba827e457e3",
-      "lastSeen": "2026-10-31",
+      "lastSeen": "2026-11-01",
       "listingStatus": "官网本次可见",
       "location": "未注明",
       "sourceTier": "公司官方",
@@ -380,7 +356,7 @@
       "entryBarrier": "不可判断",
       "experience": "未注明",
       "id": "4495eecc12d3ef8355c7b363",
-      "lastSeen": "2026-10-31",
+      "lastSeen": "2026-11-01",
       "listingStatus": "页面本次可访问",
       "location": "深圳",
       "sourceTier": "招聘平台",
@@ -405,15 +381,15 @@
       ]
     },
     {
-      "category": "AI Infra/部署",
+      "category": "数据工程/数据闭环",
       "company": "华为HUAWEI",
-      "datePosted": "",
-      "education": "未注明",
+      "datePosted": "2026-08-03",
+      "education": "硕士",
       "employmentType": "校招",
       "entryBarrier": "不可判断",
       "experience": "未注明",
       "id": "a8ce210524e33f52e8d30258",
-      "lastSeen": "2026-10-31",
+      "lastSeen": "2026-11-01",
       "listingStatus": "页面本次可访问",
       "location": "深圳",
       "sourceTier": "招聘平台",
@@ -421,9 +397,10 @@
       "verification": "本次成功获取并解析",
       "workSummary": "华为HUAWEI校招 【华为27届校招】AI Infra工程师 2026最新招聘求职信息，薪资：15-30，地点：深圳，点击查看更多华为HUAWEI招聘岗位、岗位职责要求、工作内容、薪资待遇介绍等企业招聘信息",
       "url": "https://www.nowcoder.com/jobs/detail/457739",
-      "skills": [],
+      "skills": [
+        "多模态"
+      ],
       "qualityFlags": [
-        "发布日期缺失",
         "非公司官方来源"
       ],
       "responsibilities": [
@@ -446,7 +423,7 @@
       "entryBarrier": "不可判断",
       "experience": "未注明",
       "id": "ba8dc63848db5c6b1388c361",
-      "lastSeen": "2026-10-31",
+      "lastSeen": "2026-11-01",
       "listingStatus": "页面本次可访问",
       "location": "深圳",
       "sourceTier": "招聘平台",
@@ -486,7 +463,7 @@
       "entryBarrier": "不可判断",
       "experience": "未注明",
       "id": "9fd06d40e02da29c045c6a67",
-      "lastSeen": "2026-10-31",
+      "lastSeen": "2026-11-01",
       "listingStatus": "官网本次可见",
       "location": "深圳 / 上海 / 北京",
       "sourceTier": "公司官方",
@@ -519,7 +496,7 @@
       "entryBarrier": "不可判断",
       "experience": "未注明",
       "id": "73d50ce57a5aa5d1984e3857",
-      "lastSeen": "2026-10-31",
+      "lastSeen": "2026-11-01",
       "listingStatus": "官网本次可见",
       "location": "杭州",
       "sourceTier": "公司官方",
@@ -554,7 +531,7 @@
       "entryBarrier": "不可判断",
       "experience": "未注明",
       "id": "ee66924b7613174ee6406408",
-      "lastSeen": "2026-10-31",
+      "lastSeen": "2026-11-01",
       "listingStatus": "官网本次可见",
       "location": "杭州",
       "sourceTier": "公司官方",
@@ -588,7 +565,7 @@
       "entryBarrier": "不可判断",
       "experience": "未注明",
       "id": "1cd5af8e9b8f3fe74f7075fc",
-      "lastSeen": "2026-10-31",
+      "lastSeen": "2026-11-01",
       "listingStatus": "官网本次可见",
       "location": "杭州",
       "sourceTier": "公司官方",
@@ -621,7 +598,7 @@
       "entryBarrier": "不可判断",
       "experience": "未注明",
       "id": "a7f385d4d3175faec5385de4",
-      "lastSeen": "2026-10-31",
+      "lastSeen": "2026-11-01",
       "listingStatus": "官网本次可见",
       "location": "杭州",
       "sourceTier": "公司官方",
@@ -654,7 +631,7 @@
       "entryBarrier": "不可判断",
       "experience": "未注明",
       "id": "7225de036bad7a425f13c33d",
-      "lastSeen": "2026-10-31",
+      "lastSeen": "2026-11-01",
       "listingStatus": "官网本次可见",
       "location": "杭州",
       "sourceTier": "公司官方",
@@ -687,7 +664,7 @@
       "entryBarrier": "不可判断",
       "experience": "未注明",
       "id": "6d0b557f422ccb2fccafb5a1",
-      "lastSeen": "2026-10-31",
+      "lastSeen": "2026-11-01",
       "listingStatus": "官网本次可见",
       "location": "杭州",
       "sourceTier": "公司官方",
@@ -720,7 +697,7 @@
       "entryBarrier": "不可判断",
       "experience": "未注明",
       "id": "56b4818ba86dd1267a44792a",
-      "lastSeen": "2026-10-31",
+      "lastSeen": "2026-11-01",
       "listingStatus": "官网本次可见",
       "location": "杭州",
       "sourceTier": "公司官方",
@@ -753,7 +730,7 @@
       "entryBarrier": "不可判断",
       "experience": "未注明",
       "id": "13452e651461a9ddf27810ce",
-      "lastSeen": "2026-10-31",
+      "lastSeen": "2026-11-01",
       "listingStatus": "官网本次可见",
       "location": "杭州",
       "sourceTier": "公司官方",
@@ -785,7 +762,7 @@
       "entryBarrier": "不可判断",
       "experience": "未注明",
       "id": "f09012f22fbe23f931b22170",
-      "lastSeen": "2026-10-31",
+      "lastSeen": "2026-11-01",
       "listingStatus": "官网本次可见",
       "location": "杭州",
       "sourceTier": "公司官方",
@@ -815,7 +792,7 @@
       "entryBarrier": "不可判断",
       "experience": "未注明",
       "id": "0c468f49e048034319736afc",
-      "lastSeen": "2026-10-31",
+      "lastSeen": "2026-11-01",
       "listingStatus": "官网本次可见",
       "location": "杭州",
       "sourceTier": "公司官方",
@@ -846,7 +823,7 @@
       "entryBarrier": "不可判断",
       "experience": "未注明",
       "id": "e551b03bb72c0854864c05b0",
-      "lastSeen": "2026-10-31",
+      "lastSeen": "2026-11-01",
       "listingStatus": "官网本次可见",
       "location": "杭州",
       "sourceTier": "公司官方",
@@ -873,6 +850,47 @@
       ]
     },
     {
+      "category": "AI Infra/部署",
+      "company": "安克创新",
+      "datePosted": "2026-08-26",
+      "education": "硕士",
+      "employmentType": "校招",
+      "entryBarrier": "不可判断",
+      "experience": "未注明",
+      "id": "2e9ec9eedf6df694af60c8cb",
+      "lastSeen": "2026-11-01",
+      "listingStatus": "页面本次可访问",
+      "location": "深圳",
+      "sourceTier": "招聘平台",
+      "title": "具身大模型加速优化工程师-深圳/上海",
+      "verification": "本次成功获取并解析",
+      "workSummary": "安克创新校招 具身大模型加速优化工程师-深圳/上海 2026最新招聘求职信息，薪资：0-9999999，地点：深圳，点击查看更多安克创新招聘岗位、岗位职责要求、工作内容、薪资待遇介绍等企业招聘信息",
+      "url": "https://www.nowcoder.com/jobs/detail/463313",
+      "skills": [
+        "Python",
+        "C++",
+        "PyTorch",
+        "TensorFlow",
+        "CUDA",
+        "TensorRT",
+        "Linux",
+        "多模态"
+      ],
+      "qualityFlags": [
+        "非公司官方来源"
+      ],
+      "responsibilities": [
+        "安克创新校招 具身大模型加速优化工程师-深圳/上海 2026最新招聘求职信息，薪资：0-9999999，地点：深圳，点击查看更多安克创新招聘岗位、岗位职责要求、工作内容、薪资待遇介绍等企业招聘信息"
+      ],
+      "requirements": [
+        "安克创新校招 具身大模型加速优化工程师-深圳/上海 2026最新招聘求职信息，薪资：0-9999999，地点：深圳，点击查看更多安克创新招聘岗位、岗位职责要求、工作内容、薪资待遇介绍等企业招聘信息"
+      ],
+      "entryBasis": [
+        "岗位类型为校招",
+        "学历与经验要求未完整披露"
+      ]
+    },
+    {
       "category": "3D视觉/点云/重建",
       "company": "安克创新",
       "datePosted": "2026-08-26",
@@ -881,7 +899,7 @@
       "entryBarrier": "不可判断",
       "experience": "未注明",
       "id": "2a2a4ba3d57d24d2683fcfcd",
-      "lastSeen": "2026-10-31",
+      "lastSeen": "2026-11-01",
       "listingStatus": "页面本次可访问",
       "location": "深圳",
       "sourceTier": "招聘平台",
@@ -913,13 +931,13 @@
     {
       "category": "通用算法/多模态/CV",
       "company": "安克创新",
-      "datePosted": "",
-      "education": "未注明",
+      "datePosted": "2026-08-26",
+      "education": "硕士",
       "employmentType": "校招",
       "entryBarrier": "不可判断",
       "experience": "未注明",
       "id": "f569d65c72ac7c4cad1536d5",
-      "lastSeen": "2026-10-31",
+      "lastSeen": "2026-11-01",
       "listingStatus": "页面本次可访问",
       "location": "深圳",
       "sourceTier": "招聘平台",
@@ -928,10 +946,12 @@
       "workSummary": "安克创新校招 多模态大模型算法工程师-深圳 2026最新招聘求职信息，薪资：0-9999999，地点：深圳，点击查看更多安克创新招聘岗位、岗位职责要求、工作内容、薪资待遇介绍等企业招聘信息",
       "url": "https://www.nowcoder.com/jobs/detail/463085",
       "skills": [
+        "Python",
+        "C++",
+        "VLA",
         "多模态"
       ],
       "qualityFlags": [
-        "发布日期缺失",
         "非公司官方来源"
       ],
       "responsibilities": [
@@ -954,7 +974,7 @@
       "entryBarrier": "高",
       "experience": "未注明",
       "id": "fe0a9df734efe6d83b97998b",
-      "lastSeen": "2026-10-31",
+      "lastSeen": "2026-11-01",
       "listingStatus": "页面本次可访问",
       "location": "深圳",
       "sourceTier": "招聘平台",
@@ -990,7 +1010,7 @@
       "entryBarrier": "不可判断",
       "experience": "未注明",
       "id": "9bf6a3a4faf1fedd1311de34",
-      "lastSeen": "2026-10-31",
+      "lastSeen": "2026-11-01",
       "listingStatus": "页面本次可访问",
       "location": "深圳",
       "sourceTier": "招聘平台",
@@ -1023,6 +1043,95 @@
       ]
     },
     {
+      "category": "3D视觉/点云/重建",
+      "company": "智联招聘",
+      "datePosted": "",
+      "education": "硕士",
+      "employmentType": "校招",
+      "entryBarrier": "高",
+      "experience": "经验不限",
+      "id": "29964c8ca311b54049768c74",
+      "lastSeen": "2026-11-01",
+      "listingStatus": "页面本次可访问",
+      "location": "深圳",
+      "sourceTier": "招聘平台",
+      "title": "3D视觉算法工程师（校招031）招聘_大族激光招聘 - 智联招聘",
+      "verification": "本次成功获取并解析",
+      "workSummary": "大族激光招聘深圳宝安区3D视觉算法工程师（校招031）,薪资1.5-2.5万,要求:工作经验经验不限,学历:硕士,工作环境好,同事很nice,团队执行强,氛围活跃,人际关系好,交通便利,招聘负责人刚在线,随时沟通岗位",
+      "url": "https://www.zhaopin.com/jobdetail/CC000341550J40892904205.htm",
+      "skills": [
+        "Python",
+        "C++",
+        "PyTorch",
+        "TensorFlow",
+        "Linux",
+        "OpenCV",
+        "Open3D",
+        "PCL",
+        "Eigen",
+        "SQL"
+      ],
+      "qualityFlags": [
+        "发布日期缺失",
+        "非公司官方来源"
+      ],
+      "responsibilities": [
+        "大族激光招聘深圳宝安区3D视觉算法工程师（校招031）,薪资1.5-2.5万,要求:工作经验经验不限,学历:硕士,工作环境好,同事很nice,团队执行强,氛围活跃,人际关系好,交通便利,招聘负责人刚在线,随时沟通岗位"
+      ],
+      "requirements": [
+        "大族激光招聘深圳宝安区3D视觉算法工程师（校招031）,薪资1.5-2.5万,要求:工作经验经验不限,学历:硕士,工作环境好,同事很nice,团队执行强,氛围活跃,人际关系好,交通便利,招聘负责人刚在线,随时沟通岗位"
+      ],
+      "entryBasis": [
+        "负责人"
+      ]
+    },
+    {
+      "category": "机器人控制/VLA",
+      "company": "智联招聘",
+      "datePosted": "2006-04-18",
+      "education": "博士",
+      "employmentType": "未注明",
+      "entryBarrier": "高",
+      "experience": "1-3年",
+      "id": "dbfe2bfd0f4bb0cbae19f845",
+      "lastSeen": "2026-11-01",
+      "listingStatus": "可能过期",
+      "location": "深圳",
+      "sourceTier": "招聘平台",
+      "title": "机器人仿真数据工程师招聘_深圳市杰普特光电股份有限公司招聘 - 智联招聘",
+      "verification": "本次成功获取并解析",
+      "workSummary": "深圳市杰普特光电股份有限公司招聘深圳龙华区机器人仿真数据工程师,薪资1.8-3.5万,要求:工作经验1-3年,学历:硕士,招聘负责人刚在线,随时沟通岗位",
+      "url": "https://www.zhaopin.com/jobdetail/CC397028480J40995098604.htm",
+      "skills": [
+        "Python",
+        "C++",
+        "PyTorch",
+        "TensorFlow",
+        "ROS2",
+        "Isaac Sim",
+        "MuJoCo",
+        "Gazebo",
+        "OpenCV",
+        "SLAM",
+        "VLA",
+        "强化学习",
+        "Go"
+      ],
+      "qualityFlags": [
+        "发布日期较旧",
+        "非公司官方来源"
+      ],
+      "responsibilities": [
+        "深圳市杰普特光电股份有限公司招聘深圳龙华区机器人仿真数据工程师,薪资1.8-3.5万,要求:工作经验1-3年,学历:硕士,招聘负责人刚在线,随时沟通岗位"
+      ],
+      "requirements": [
+        "深圳市杰普特光电股份有限公司招聘深圳龙华区机器人仿真数据工程师,薪资1.8-3.5万,要求:工作经验1-3年,学历:硕士,招聘负责人刚在线,随时沟通岗位"
+      ],
+      "entryBasis": [
+        "负责人"
+      ]
+    },
+    {
       "category": "通用算法/多模态/CV",
       "company": "桥介数物（深圳）科技有限公司",
       "datePosted": "2027-12-31",
@@ -1031,7 +1140,7 @@
       "entryBarrier": "不可判断",
       "experience": "未注明",
       "id": "dbb1a15d10adb73716cf6a31",
-      "lastSeen": "2026-10-31",
+      "lastSeen": "2026-11-01",
       "listingStatus": "页面本次可访问",
       "location": "深圳",
       "sourceTier": "招聘平台",
@@ -1068,7 +1177,7 @@
       "entryBarrier": "不可判断",
       "experience": "未注明",
       "id": "0d7f9d8941700f81f2a916b6",
-      "lastSeen": "2026-10-31",
+      "lastSeen": "2026-11-01",
       "listingStatus": "页面本次可访问",
       "location": "深圳",
       "sourceTier": "招聘平台",
@@ -1099,23 +1208,26 @@
     {
       "category": "通用算法/多模态/CV",
       "company": "深圳思达资讯科技有限公司",
-      "datePosted": "",
-      "education": "未注明",
+      "datePosted": "2026-03-27",
+      "education": "本科",
       "employmentType": "实习",
       "entryBarrier": "不可判断",
       "experience": "未注明",
       "id": "b473c4097db2837eaf7dea36",
-      "lastSeen": "2026-10-31",
-      "listingStatus": "页面本次可访问",
+      "lastSeen": "2026-11-01",
+      "listingStatus": "可能过期",
       "location": "深圳 / 广州",
       "sourceTier": "招聘平台",
       "title": "算法工程师（实习）",
       "verification": "本次成功获取并解析",
       "workSummary": "深圳思达资讯科技有限公司实习 算法工程师（实习） 2026最新招聘求职信息，薪资：200-500，地点：广州，点击查看更多深圳思达资讯科技有限公司招聘岗位、岗位职责要求、工作内容、薪资待遇介绍等企业招聘信息",
       "url": "https://www.nowcoder.com/jobs/detail/442825",
-      "skills": [],
+      "skills": [
+        "Python",
+        "C++"
+      ],
       "qualityFlags": [
-        "发布日期缺失",
+        "发布日期较旧",
         "非公司官方来源"
       ],
       "responsibilities": [
@@ -1132,13 +1244,13 @@
     {
       "category": "AI Agent/大模型应用",
       "company": "深圳虾皮信息科技有限公司",
-      "datePosted": "",
-      "education": "未注明",
+      "datePosted": "2026-08-18",
+      "education": "博士",
       "employmentType": "校招",
       "entryBarrier": "不可判断",
       "experience": "未注明",
       "id": "f969b3cd1123f699dae6d056",
-      "lastSeen": "2026-10-31",
+      "lastSeen": "2026-11-01",
       "listingStatus": "页面本次可访问",
       "location": "深圳 / 北京",
       "sourceTier": "招聘平台",
@@ -1146,9 +1258,12 @@
       "verification": "本次成功获取并解析",
       "workSummary": "深圳虾皮信息科技有限公司校招 （27届 ASP）AI-Agent算法工程师 2026最新招聘求职信息，薪资：40-50，地点：北京，点击查看更多深圳虾皮信息科技有限公司招聘岗位、岗位职责要求、工作内容、薪资待遇介绍等企业招聘信息",
       "url": "https://www.nowcoder.com/jobs/detail/461356",
-      "skills": [],
+      "skills": [
+        "Python",
+        "C++",
+        "RAG"
+      ],
       "qualityFlags": [
-        "发布日期缺失",
         "非公司官方来源"
       ],
       "responsibilities": [
@@ -1165,13 +1280,13 @@
     {
       "category": "AI Agent/大模型应用",
       "company": "深圳虾皮信息科技有限公司",
-      "datePosted": "2026-08-18",
-      "education": "博士",
+      "datePosted": "",
+      "education": "未注明",
       "employmentType": "校招",
       "entryBarrier": "不可判断",
       "experience": "未注明",
       "id": "21bc8fca0a7b6ddf7c98514b",
-      "lastSeen": "2026-10-31",
+      "lastSeen": "2026-11-01",
       "listingStatus": "页面本次可访问",
       "location": "深圳 / 北京 / 上海",
       "sourceTier": "招聘平台",
@@ -1179,14 +1294,9 @@
       "verification": "本次成功获取并解析",
       "workSummary": "深圳虾皮信息科技有限公司校招 （27届 ASP）LLM-大模型后训练算法工程师 2026最新招聘求职信息，薪资：40-50，地点：上海,海外,北京，点击查看更多深圳虾皮信息科技有限公司招聘岗位、岗位职责要求、工作内容、薪资待遇介绍等企业招聘信息",
       "url": "https://www.nowcoder.com/jobs/detail/461346",
-      "skills": [
-        "Python",
-        "PyTorch",
-        "Docker",
-        "强化学习",
-        "RAG"
-      ],
+      "skills": [],
       "qualityFlags": [
+        "发布日期缺失",
         "非公司官方来源"
       ],
       "responsibilities": [
@@ -1209,7 +1319,7 @@
       "entryBarrier": "不可判断",
       "experience": "应届",
       "id": "47f9b1740d8a4043ec2bf2a7",
-      "lastSeen": "2026-10-31",
+      "lastSeen": "2026-11-01",
       "listingStatus": "页面本次可访问",
       "location": "深圳",
       "sourceTier": "招聘平台",
@@ -1246,7 +1356,7 @@
       "entryBarrier": "不可判断",
       "experience": "未注明",
       "id": "db1c52ebcd66dd4d1260a7b9",
-      "lastSeen": "2026-10-31",
+      "lastSeen": "2026-11-01",
       "listingStatus": "页面本次可访问",
       "location": "深圳 / 上海",
       "sourceTier": "招聘平台",
@@ -1277,15 +1387,15 @@
       ]
     },
     {
-      "category": "AI Agent/大模型应用",
+      "category": "AI Infra/部署",
       "company": "阿里云",
       "datePosted": "",
-      "education": "博士",
+      "education": "未注明",
       "employmentType": "实习",
       "entryBarrier": "不可判断",
-      "experience": "应届",
+      "experience": "未注明",
       "id": "57af5f0e488dfe31637f525f",
-      "lastSeen": "2026-10-31",
+      "lastSeen": "2026-11-01",
       "listingStatus": "页面本次可访问",
       "location": "深圳",
       "sourceTier": "招聘平台",
@@ -1293,10 +1403,7 @@
       "verification": "本次成功获取并解析",
       "workSummary": "阿里云实习 AI Infra 研发工程师（2027届实习） 2026最新招聘求职信息，薪资：400-500，地点：深圳，点击查看更多阿里云招聘岗位、岗位职责要求、工作内容、薪资待遇介绍等企业招聘信息",
       "url": "https://www.nowcoder.com/jobs/detail/435114",
-      "skills": [
-        "C++",
-        "Go"
-      ],
+      "skills": [],
       "qualityFlags": [
         "发布日期缺失",
         "非公司官方来源"
@@ -1321,7 +1428,7 @@
       "entryBarrier": "不可判断",
       "experience": "未注明",
       "id": "17c21c595bf4ce4bbbdce0b0",
-      "lastSeen": "2026-10-31",
+      "lastSeen": "2026-11-01",
       "listingStatus": "可能过期",
       "location": "深圳",
       "sourceTier": "招聘平台",
@@ -1644,7 +1751,7 @@
   ],
   "events": [
     {
-      "discoveredAt": "2026-10-31T03:42:44.128965+00:00",
+      "discoveredAt": "2026-11-01T03:50:44.932450+00:00",
       "domain": "github.com",
       "eventType": "开源项目",
       "id": "f9ce26bb67e1e2929257bec3",
@@ -1656,7 +1763,7 @@
       "url": "https://github.com/tianxingchen/Embodied-AI-Guide"
     },
     {
-      "discoveredAt": "2026-10-31T03:42:44.128965+00:00",
+      "discoveredAt": "2026-11-01T03:50:44.932450+00:00",
       "domain": "unitree.com",
       "eventType": "公司动态",
       "id": "97b4b5f414e29a3980b8865c",
@@ -1668,20 +1775,8 @@
       "url": "https://www.unitree.com/cn"
     },
     {
-      "discoveredAt": "2026-10-31T03:42:44.128965+00:00",
-      "domain": "dobot.cn",
-      "eventType": "公司动态",
-      "id": "ae47d6d0da48ea388df1af72",
-      "project": "来源机构",
-      "sourceTier": "公司官方",
-      "title": "Dobot越疆协作机器人-机械臂-智能机器人研发公司",
-      "verification": "target_page_fetched",
-      "whatHappened": "越疆机器人专注于协作机器人,机械臂,码垛机器人,焊接机器人等智能机器人的研发与应用,拥有CRA,CRAS,Nova,MG400,X-Trainer,M1Pro,Magician系列十余款协作机器人,销售热线:400-800-7266",
-      "url": "https://www.dobot.cn/"
-    },
-    {
       "company": "Hugging Face",
-      "discoveredAt": "2026-10-31T03:42:44.128965+00:00",
+      "discoveredAt": "2026-11-01T03:50:44.932450+00:00",
       "domain": "github.com",
       "eventType": "开源版本",
       "id": "9290c9749967e2cba841e69f",
@@ -1695,7 +1790,7 @@
     },
     {
       "company": "Hugging Face",
-      "discoveredAt": "2026-10-31T03:42:44.128965+00:00",
+      "discoveredAt": "2026-11-01T03:50:44.932450+00:00",
       "domain": "github.com",
       "eventType": "开源版本",
       "id": "2566138e1e58aef8376fc6ab",
@@ -1709,7 +1804,7 @@
     },
     {
       "company": "NVIDIA",
-      "discoveredAt": "2026-10-31T03:42:44.128965+00:00",
+      "discoveredAt": "2026-11-01T03:50:44.932450+00:00",
       "domain": "github.com",
       "eventType": "开源版本",
       "id": "20571ee869dd9d488b7a0d8f",
@@ -1723,7 +1818,7 @@
     },
     {
       "company": "NVIDIA",
-      "discoveredAt": "2026-10-31T03:42:44.128965+00:00",
+      "discoveredAt": "2026-11-01T03:50:44.932450+00:00",
       "domain": "github.com",
       "eventType": "开源版本",
       "id": "18c9e5d0976357b55b474701",
@@ -1737,7 +1832,7 @@
     },
     {
       "company": "NVIDIA",
-      "discoveredAt": "2026-10-31T03:42:44.128965+00:00",
+      "discoveredAt": "2026-11-01T03:50:44.932450+00:00",
       "domain": "github.com",
       "eventType": "开源版本",
       "id": "510a5d264e0c590efd5cab32",
@@ -1751,7 +1846,7 @@
     },
     {
       "company": "Hugging Face",
-      "discoveredAt": "2026-10-31T03:42:44.128965+00:00",
+      "discoveredAt": "2026-11-01T03:50:44.932450+00:00",
       "domain": "github.com",
       "eventType": "开源版本",
       "id": "3187f7aebf7b4be90a17f20f",
@@ -1765,7 +1860,7 @@
     },
     {
       "company": "Hugging Face",
-      "discoveredAt": "2026-10-31T03:42:44.128965+00:00",
+      "discoveredAt": "2026-11-01T03:50:44.932450+00:00",
       "domain": "github.com",
       "eventType": "开源版本",
       "id": "dcf1a3bd2d6e87a62992985f",
@@ -1779,7 +1874,7 @@
     },
     {
       "company": "NVIDIA",
-      "discoveredAt": "2026-10-31T03:42:44.128965+00:00",
+      "discoveredAt": "2026-11-01T03:50:44.932450+00:00",
       "domain": "github.com",
       "eventType": "开源版本",
       "id": "028604c68d724f7d5ff5e993",
@@ -1793,7 +1888,7 @@
     },
     {
       "company": "宇树科技",
-      "discoveredAt": "2026-10-31T03:42:44.128965+00:00",
+      "discoveredAt": "2026-11-01T03:50:44.932450+00:00",
       "domain": "github.com",
       "eventType": "开源版本",
       "id": "0b88b92cc9477087fed52985",
@@ -1807,7 +1902,7 @@
     },
     {
       "company": "宇树科技",
-      "discoveredAt": "2026-10-31T03:42:44.128965+00:00",
+      "discoveredAt": "2026-11-01T03:50:44.932450+00:00",
       "domain": "github.com",
       "eventType": "开源版本",
       "id": "4913a836d9c8956ab804f9bd",
@@ -1822,8 +1917,8 @@
   ],
   "social": [],
   "sectionUpdatedAt": {
-    "jobs": "2026-10-31T03:42:38.590859+00:00",
-    "events": "2026-10-31T03:42:44.128965+00:00",
-    "social": "2026-10-31T03:43:31.926478+00:00"
+    "jobs": "2026-11-01T03:50:39.224742+00:00",
+    "events": "2026-11-01T03:50:44.932450+00:00",
+    "social": "2026-11-01T03:51:29.337597+00:00"
   }
 }
