@@ -27,6 +27,8 @@ const translations = {
     error: 'The snapshot could not be loaded. Retry later or open the public JSON file.', stale: 'Snapshot is over 3 days old; verify sources.',
     freshness: 'Snapshot loaded · daily refresh attempts', noDate: 'Collection time unavailable', results: 'records',
     clear: 'Clear filters', unavailable: 'No collection recorded',
+    sortLabel: 'Sort jobs', sortDefault: 'Default order', sortDate: 'Page date: newest first',
+    pageDate: 'Page date', dateUnverified: 'Date unverified', dateNote: 'Page dates may not be publication dates; unverified dates sort last when sorting by date. Check the original for dates and availability.',
   },
   zh: {
     navExplore: '探索雷达', navMethod: '信息如何而来', heroTitle: '下一步，\n走向具身智能。',
@@ -51,6 +53,8 @@ const translations = {
     empty: '没有符合条件的信息，试试其他关键词或清除筛选。', missing: '未注明', openJob: '查看原文 ↗', openCompany: '官网 / 招聘 ↗',
     details: '职责与要求', fetched: '采集于', published: '发布于', error: '公开快照暂时无法读取，请稍后重试，或直接打开 JSON 文件。',
     stale: '快照已超过 3 天，请核实原文。', freshness: '快照已加载 · 每日尝试更新', noDate: '采集时间未记录', results: '条信息', clear: '清除筛选', unavailable: '暂无采集记录',
+    sortLabel: '岗位排序', sortDefault: '默认排序', sortDate: '页面提取日期：由近到远',
+    pageDate: '页面提取日期', dateUnverified: '日期待核实', dateNote: '页面提取日期可能不是发布时间；按日期排序时，日期待核实的岗位排在末尾。请在原文确认日期及岗位是否开放。',
   },
 };
 const $ = (id) => document.getElementById(id);
@@ -79,6 +83,15 @@ function date(value, short = false) {
     ...(short ? {} : { hour: '2-digit', minute: '2-digit' }),
   }).format(new Date(value));
 }
+function jobPageDate(item) {
+  const value = item.datePosted;
+  const seen = item.lastSeen;
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(value || '') || !/^\d{4}-\d{2}-\d{2}$/.test(seen || '')) return null;
+  const timestamp = Date.parse(`${value}T00:00:00Z`);
+  const seenTimestamp = Date.parse(`${seen}T00:00:00Z`);
+  if (!Number.isFinite(timestamp) || !Number.isFinite(seenTimestamp) || new Date(timestamp).toISOString().slice(0, 10) !== value || new Date(seenTimestamp).toISOString().slice(0, 10) !== seen || timestamp > seenTimestamp) return null;
+  return value;
+}
 function setOptions(id, values, allKey) {
   const select = $(id);
   const selected = select.value;
@@ -93,11 +106,12 @@ function filters() {
   setOptions('job-type', items.map((item) => item.employmentType), 'allTypes');
   $('city').parentElement.hidden = !['jobs', 'companies'].includes(tab);
   $('job-type').parentElement.hidden = tab !== 'jobs';
+  $('job-sort-label').hidden = tab !== 'jobs';
   $('official').parentElement.hidden = tab === 'companies';
 }
 function filteredItems() {
   const query = $('search').value.trim().toLocaleLowerCase();
-  return (snapshot?.[tab] || []).filter((item) => {
+  const items = (snapshot?.[tab] || []).filter((item) => {
     const searchable = [item.title, item.company, item.name, item.location, item.city, item.category,
       item.focus, item.workSummary, item.whatHappened, ...(item.skills || [])].filter(Boolean).join(' ').toLocaleLowerCase();
     return (!query || searchable.includes(query))
@@ -106,6 +120,8 @@ function filteredItems() {
       && (!$('job-type').value || item.employmentType === $('job-type').value)
       && (!$('official').checked || item.sourceTier === '公司官方');
   });
+  if (tab === 'jobs' && $('job-sort').value === 'date') items.sort((a, b) => (jobPageDate(b) || '').localeCompare(jobPageDate(a) || ''));
+  return items;
 }
 function card(item) {
   const article = element('article', 'record');
@@ -132,7 +148,9 @@ function card(item) {
   }
   const foot = element('div', 'record-foot');
   const sourceDate = item.lastSeen || item.discoveredAt || snapshot.sectionUpdatedAt[tab === 'companies' ? 'jobs' : tab];
-  foot.append(element('span', '', `${t('fetched')} ${date(sourceDate, true)}${item.datePosted || item.publishedAt ? ` · ${t('published')} ${date(item.datePosted || item.publishedAt, true)}` : ''}`));
+  const jobDate = jobPageDate(item);
+  const dateText = tab === 'jobs' ? ` · ${t('pageDate')} ${jobDate || t('dateUnverified')}` : (item.publishedAt ? ` · ${t('published')} ${date(item.publishedAt, true)}` : '');
+  foot.append(element('span', '', `${t('fetched')} ${date(sourceDate, true)}${dateText}`));
   const url = safeURL(item.url || item.careerUrl || item.officialUrl);
   if (url) { const link = element('a', '', t(tab === 'companies' ? 'openCompany' : 'openJob')); link.href = url; link.target = '_blank'; link.rel = 'noopener noreferrer'; foot.append(link); }
   article.append(foot);
@@ -140,7 +158,7 @@ function card(item) {
 }
 function render() {
   $('results').setAttribute('aria-labelledby', `tab-${tab}`);
-  $('evidence-note').textContent = t(`${tab}Note`);
+  $('evidence-note').textContent = `${t(`${tab}Note`)}${tab === 'jobs' ? ` ${t('dateNote')}` : ''}`;
   if (!snapshot) {
     const message = element('p', 'empty', t(failed ? 'error' : 'loading'));
     if (failed) { const link = element('a', '', ' JSON ↗'); link.href = 'data/snapshot.json'; message.append(link); }
@@ -169,6 +187,7 @@ function applyLanguage() {
   document.documentElement.lang = language === 'zh' ? 'zh-CN' : 'en';
   document.querySelectorAll('[data-i18n]').forEach((node) => { node.textContent = t(node.dataset.i18n); });
   $('search').placeholder = t('search'); $('search').setAttribute('aria-label', t('search'));
+  $('job-sort').setAttribute('aria-label', t('sortLabel'));
   ['city', 'category', 'job-type'].forEach((id, index) => $(id).setAttribute('aria-label', t(['cityLabel', 'categoryLabel', 'typeLabel'][index])));
   $('language').textContent = language === 'zh' ? 'EN' : '中文';
   $('language').setAttribute('aria-label', language === 'zh' ? 'Switch to English' : '切换到中文');
@@ -191,7 +210,7 @@ document.querySelectorAll('[data-tab]').forEach((button) => {
     if (next) { event.preventDefault(); next.click(); next.focus(); }
   });
 });
-['search', 'city', 'category', 'job-type', 'official'].forEach((id) => $(id).addEventListener(id === 'search' ? 'input' : 'change', () => { pageSize = 12; render(); }));
+['search', 'city', 'category', 'job-type', 'official', 'job-sort'].forEach((id) => $(id).addEventListener(id === 'search' ? 'input' : 'change', () => { pageSize = 12; render(); }));
 $('language').addEventListener('click', () => { language = language === 'zh' ? 'en' : 'zh'; try { localStorage.setItem('embodied-compass-language', language); } catch { /* No storage required to browse. */ } applyLanguage(); });
 $('load-more').addEventListener('click', () => { pageSize += 12; render(); });
 applyLanguage();
