@@ -10,7 +10,7 @@ const translations = {
     tabJobs: 'Opportunities', tabCompanies: 'Companies', tabEvents: 'Research', tabSocial: 'Social signals',
     cityLabel: 'City', categoryLabel: 'Specialty', typeLabel: 'Role type', allCities: 'All cities', allCategories: 'All specialties',
     allTypes: 'All role types', officialOnly: 'Official company sources', search: 'Search roles, companies, skills…',
-    loadMore: 'Show more ↓', methodTitle: 'Sources first. Clear boundaries.', methodIntro: 'An evolving map to help you make your own decisions.',
+    previousPage: 'Previous', nextPage: 'Next', pagination: 'Result pages', pageLabel: 'Page', rangeLabel: 'Showing', totalLabel: 'of', methodTitle: 'Sources first. Clear boundaries.', methodIntro: 'An evolving map to help you make your own decisions.',
     readMethod: 'Read the methodology ↗', collectTitle: 'Start with public sources',
     collectBody: 'Career pages, company websites, open-source releases and paper indexes. Follow the original link to check the details.',
     organizeTitle: 'Turn information into leads', organizeBody: 'Explore by city, specialty and skill. Official sources, reposts and social leads are labelled separately.',
@@ -38,7 +38,7 @@ const translations = {
     metricEvents: '研究与行业动态', metricEventsNote: '保留原始来源', metricDate: '岗位采集时间', loading: '正在读取公开快照…',
     exploreTitle: '少一点噪声，多一点方向。', tabJobs: '岗位机会', tabCompanies: '公司地图', tabEvents: '研究动态', tabSocial: '社媒线索',
     cityLabel: '城市', categoryLabel: '方向', typeLabel: '岗位类型', allCities: '全部城市', allCategories: '全部方向', allTypes: '全部类型',
-    officialOnly: '仅公司官方', search: '搜索岗位、公司、技能…', loadMore: '查看更多 ↓',
+    officialOnly: '仅公司官方', search: '搜索岗位、公司、技能…', previousPage: '上一页', nextPage: '下一页', pagination: '结果分页', pageLabel: '第', rangeLabel: '显示', totalLabel: '共',
     methodTitle: '信息有出处，判断有边界。', methodIntro: '一张持续整理的地图，帮助你自己做判断。', readMethod: '阅读完整方法说明 ↗',
     collectTitle: '从公开来源出发', collectBody: '招聘页面、公司官网、开源发布与论文索引。保留原链接，便于回到一手信息。',
     organizeTitle: '把信息整理成线索', organizeBody: '按城市、岗位方向和技能查看；官方来源、转发和社媒线索分别标注。',
@@ -62,7 +62,8 @@ let language = 'zh';
 try { language = localStorage.getItem('embodied-compass-language') === 'en' ? 'en' : 'zh'; } catch { /* Browser storage is optional. */ }
 let snapshot = null;
 let tab = 'jobs';
-let pageSize = 12;
+const PAGE_SIZE = 12;
+let currentPage = 1;
 let failed = false;
 const t = (key) => translations[language][key] || key;
 
@@ -157,10 +158,51 @@ function card(item) {
   article.append(foot);
   return article;
 }
+function pageNumbers(page, totalPages) {
+  if (totalPages <= 7) return Array.from({ length: totalPages }, (_, index) => index + 1);
+  return [...new Set([1, totalPages, page - 1, page, page + 1])].filter(value => value >= 1 && value <= totalPages).sort((a, b) => a - b);
+}
+function goToPage(page) {
+  currentPage = page;
+  render();
+  $('results').focus({ preventScroll: true });
+  $('results').scrollIntoView({ block: 'start', behavior: 'instant' });
+}
+function renderPagination(total) {
+  const nav = $('pagination');
+  nav.hidden = total === 0;
+  nav.setAttribute('aria-label', t('pagination'));
+  nav.replaceChildren();
+  if (!total) return;
+  const totalPages = Math.ceil(total / PAGE_SIZE);
+  const start = (currentPage - 1) * PAGE_SIZE + 1;
+  const end = Math.min(currentPage * PAGE_SIZE, total);
+  const status = element('span', 'page-status', `${t('rangeLabel')} ${start}–${end} · ${t('totalLabel')} ${total}`);
+  status.setAttribute('role', 'status');
+  const controls = element('div', 'page-controls');
+  function button(label, page, disabled, active = false) {
+    const node = element('button', '', label);
+    node.type = 'button'; node.disabled = disabled;
+    if (active) node.setAttribute('aria-current', 'page');
+    if (typeof label === 'number') node.setAttribute('aria-label', `${t('pageLabel')} ${label}`);
+    node.addEventListener('click', () => goToPage(page));
+    controls.append(node);
+  }
+  button(t('previousPage'), currentPage - 1, currentPage === 1);
+  let previous = 0;
+  pageNumbers(currentPage, totalPages).forEach(page => {
+    if (page > previous + 1) controls.append(element('span', 'page-gap', '…'));
+    button(page, page, false, page === currentPage);
+    previous = page;
+  });
+  button(t('nextPage'), currentPage + 1, currentPage === totalPages);
+  nav.append(status, controls);
+}
 function render() {
   $('results').setAttribute('aria-labelledby', `tab-${tab}`);
   $('evidence-note').textContent = `${t(`${tab}Note`)}${tab === 'jobs' ? ` ${t('dateNote')}` : ''}`;
   if (!snapshot) {
+    $('pagination').hidden = true;
     const message = element('p', 'empty', t(failed ? 'error' : 'loading'));
     if (failed) { const link = element('a', '', ' JSON ↗'); link.href = 'data/snapshot.json'; message.append(link); }
     $('results').replaceChildren(message);
@@ -172,17 +214,19 @@ function render() {
   $('snapshot-date').textContent = date(snapshot.generatedAt, true);
   $('freshness').textContent = t(Date.now() - Date.parse(snapshot.generatedAt) > 3 * 86400000 ? 'stale' : 'freshness');
   const items = filteredItems();
+  currentPage = Math.max(1, Math.min(currentPage, Math.ceil(items.length / PAGE_SIZE)));
   $('result-count').textContent = `${items.length} ${t('results')}`;
   const updated = snapshot.sectionUpdatedAt[tab === 'companies' ? 'jobs' : tab];
   $('section-date').textContent = updated ? `${t('fetched')} ${date(updated)} (UTC+8)` : t('unavailable');
-  $('results').replaceChildren(...items.slice(0, pageSize).map(card));
+  const offset = (currentPage - 1) * PAGE_SIZE;
+  $('results').replaceChildren(...items.slice(offset, offset + PAGE_SIZE).map(card));
   if (!items.length) {
     const empty = element('div', 'empty'); empty.append(element('p', '', t('empty')));
     const clear = element('button', 'button secondary', t('clear')); clear.type = 'button';
-    clear.addEventListener('click', () => { ['search', 'city', 'category', 'job-type'].forEach((id) => { $(id).value = ''; }); $('official').checked = false; render(); });
+    clear.addEventListener('click', () => { ['search', 'city', 'category', 'job-type'].forEach((id) => { $(id).value = ''; }); $('official').checked = false; currentPage = 1; render(); });
     empty.append(clear); $('results').append(empty);
   }
-  $('load-more').hidden = pageSize >= items.length;
+  renderPagination(items.length);
 }
 function applyLanguage() {
   document.documentElement.lang = language === 'zh' ? 'zh-CN' : 'en';
@@ -195,7 +239,7 @@ function applyLanguage() {
   filters(); render();
 }
 function changeTab(next) {
-  tab = next; pageSize = 12;
+  tab = next; currentPage = 1;
   ['city', 'category', 'job-type'].forEach((id) => { $(id).value = ''; }); $('official').checked = false;
   document.querySelectorAll('[data-tab]').forEach((button) => { const active = button.dataset.tab === tab; button.setAttribute('aria-selected', String(active)); button.tabIndex = active ? 0 : -1; });
   filters(); render();
@@ -211,9 +255,8 @@ document.querySelectorAll('[data-tab]').forEach((button) => {
     if (next) { event.preventDefault(); next.click(); next.focus(); }
   });
 });
-['search', 'city', 'category', 'job-type', 'official', 'job-sort'].forEach((id) => $(id).addEventListener(id === 'search' ? 'input' : 'change', () => { pageSize = 12; render(); }));
+['search', 'city', 'category', 'job-type', 'official', 'job-sort'].forEach((id) => $(id).addEventListener(id === 'search' ? 'input' : 'change', () => { currentPage = 1; render(); }));
 $('language').addEventListener('click', () => { language = language === 'zh' ? 'en' : 'zh'; try { localStorage.setItem('embodied-compass-language', language); } catch { /* No storage required to browse. */ } applyLanguage(); });
-$('load-more').addEventListener('click', () => { pageSize += 12; render(); });
 applyLanguage();
 fetch('data/snapshot.json', { cache: 'no-cache' }).then((response) => {
   if (!response.ok) throw new Error(`Snapshot HTTP ${response.status}`);
