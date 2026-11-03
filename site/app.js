@@ -100,6 +100,7 @@ function setOptions(id, values, allKey) {
   if ([...select.options].some((option) => option.value === selected)) select.value = selected;
 }
 function filters() {
+  $('tab-social').hidden = !snapshot?.social?.length;
   const items = snapshot?.[tab] || [];
   setOptions('city', items.flatMap((item) => String(item.location || item.city || '').split(/\s*[/、,]\s*/)), 'allCities');
   setOptions('category', items.map((item) => item.category || item.companyType || item.eventType || item.signalType), 'allCategories');
@@ -202,7 +203,7 @@ function changeTab(next) {
 document.querySelectorAll('[data-tab]').forEach((button) => {
   button.addEventListener('click', () => changeTab(button.dataset.tab));
   button.addEventListener('keydown', (event) => {
-    const tabs = [...document.querySelectorAll('[data-tab]')]; const index = tabs.indexOf(button);
+    const tabs = [...document.querySelectorAll('[data-tab]')].filter((item) => !item.hidden); const index = tabs.indexOf(button);
     let next = null;
     if (event.key === 'ArrowRight') next = tabs[(index + 1) % tabs.length];
     if (event.key === 'ArrowLeft') next = tabs[(index + tabs.length - 1) % tabs.length];
